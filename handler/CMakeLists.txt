@@ -42,7 +42,7 @@ find_package(mini_chromium CONFIG REQUIRED)
 target_link_libraries(
     crashpad_handler_lib
     PUBLIC
-    mini_chromium::base
+    mini_chromium::minichromium_base
     crashpad_compat
     crashpad_util
     crashpad_snapshot
@@ -68,7 +68,7 @@ if(WIN32 AND CRASHPAD_BUILD_TESTS)
   target_link_libraries(
       crashy_program
       PUBLIC
-      mini_chromium::base
+      mini_chromium::minichromium_base
       crashpad_client
   )
 
@@ -76,7 +76,7 @@ if(WIN32 AND CRASHPAD_BUILD_TESTS)
   target_link_libraries(
       crash_other_program
       PUBLIC
-      mini_chromium::base
+      mini_chromium::minichromium_base
       crashpad_client
       crashpad_util
       crashpad_test
@@ -86,7 +86,7 @@ if(WIN32 AND CRASHPAD_BUILD_TESTS)
   target_link_libraries(
       hanging_program
       PUBLIC
-      mini_chromium::base
+      mini_chromium::minichromium_base
       crashpad_client
   )
 
@@ -96,7 +96,7 @@ if(WIN32 AND CRASHPAD_BUILD_TESTS)
   target_link_libraries(
       self_destroying_program
       PUBLIC
-      mini_chromium::base
+      mini_chromium::minichromium_base
       crashpad_client
       crashpad_snapshot
   )
@@ -106,7 +106,7 @@ if(WIN32 AND CRASHPAD_BUILD_TESTS)
     target_link_libraries(
         crashy_z7_loader
         PUBLIC
-        mini_chromium::base
+        mini_chromium::minichromium_base
         crashpad_client
         crashpad_test
     )

@@ -48,7 +48,7 @@ hunter_add_package(mini_chromium)
 find_package(mini_chromium CONFIG REQUIRED)
 
 target_link_libraries(
-    crashpad_client PUBLIC mini_chromium::base crashpad_util crashpad_compat
+    crashpad_client PUBLIC mini_chromium::minichromium_base crashpad_util crashpad_compat
 )
 
 install(
@@ -92,7 +92,7 @@ if(CRASHPAD_BUILD_TESTS)
       crashpad_test
       GMock::main
       GTest::gtest
-      mini_chromium::base
+      mini_chromium::minichromium_base
       crashpad_util
   )
 

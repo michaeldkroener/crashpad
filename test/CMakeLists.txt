@@ -65,7 +65,7 @@ target_link_libraries(
     crashpad_test
     PUBLIC
     crashpad_compat
-    mini_chromium::base
+    mini_chromium::minichromium_base
     crashpad_util
     GTest::gtest
 )
@@ -124,7 +124,7 @@ target_link_libraries(
     crashpad_compat
     GMock::main
     GTest::gtest
-    mini_chromium::base
+    mini_chromium::minichromium_base
     crashpad_util
 )
 

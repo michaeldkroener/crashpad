@@ -137,7 +137,7 @@ hunter_add_package(mini_chromium)
 find_package(mini_chromium CONFIG REQUIRED)
 
 target_link_libraries(
-    crashpad_snapshot PUBLIC mini_chromium::base crashpad_compat crashpad_util
+    crashpad_snapshot PUBLIC mini_chromium::minichromium_base crashpad_compat crashpad_util
 )
 
 if(WIN32)
@@ -169,7 +169,7 @@ if(CRASHPAD_BUILD_TESTS)
       PUBLIC
       crashpad_snapshot
       crashpad_compat
-      mini_chromium::base
+      mini_chromium::minichromium_base
       crashpad_util
   )
 
@@ -221,7 +221,7 @@ if(CRASHPAD_BUILD_TESTS)
       crashpad_compat
       crashpad_test
       GTest::main
-      mini_chromium::base
+      mini_chromium::minichromium_base
       crashpad_util
   )
   if(WIN32)
@@ -304,7 +304,7 @@ if(CRASHPAD_BUILD_TESTS)
   target_link_libraries(
       crashpad_snapshot_test_module
       PUBLIC
-      mini_chromium::base
+      mini_chromium::minichromium_base
       crashpad_client
   )
 
@@ -341,7 +341,7 @@ if(CRASHPAD_BUILD_TESTS)
         PUBLIC
         crashpad_client
         crashpad_compat
-        mini_chromium::base
+        mini_chromium::minichromium_base
         crashpad_util
     )
 
@@ -354,7 +354,7 @@ if(CRASHPAD_BUILD_TESTS)
         PUBLIC
         crashpad_client
         crashpad_compat
-        mini_chromium::base
+        mini_chromium::minichromium_base
         crashpad_util
     )
 
@@ -367,7 +367,7 @@ if(CRASHPAD_BUILD_TESTS)
         PUBLIC
         crashpad_client
         crashpad_compat
-        mini_chromium::base
+        mini_chromium::minichromium_base
     )
 
     add_executable(
@@ -379,7 +379,7 @@ if(CRASHPAD_BUILD_TESTS)
         PUBLIC
         crashpad_client
         crashpad_compat
-        mini_chromium::base
+        mini_chromium::minichromium_base
         crashpad_util
     )
 
@@ -392,7 +392,7 @@ if(CRASHPAD_BUILD_TESTS)
         crashpad_snapshot_test_image_reader_module
         PUBLIC
         crashpad_client
-        mini_chromium::base
+        mini_chromium::minichromium_base
     )
     set_target_properties(
         crashpad_snapshot_test_image_reader_module
@@ -410,7 +410,7 @@ if(CRASHPAD_BUILD_TESTS)
         PUBLIC
         crashpad_client
         crashpad_compat
-        mini_chromium::base
+        mini_chromium::minichromium_base
     )
   endif()
 endif()

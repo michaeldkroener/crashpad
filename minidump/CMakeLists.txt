@@ -61,7 +61,7 @@ find_package(mini_chromium CONFIG REQUIRED)
 target_link_libraries(
     crashpad_minidump
     PUBLIC
-    mini_chromium::base
+    mini_chromium::minichromium_base
     crashpad_compat
     crashpad_snapshot
 )
@@ -112,7 +112,7 @@ if(CRASHPAD_BUILD_TESTS)
       crashpad_snapshot_test_lib
       crashpad_test
       GTest::main
-      mini_chromium::base
+      mini_chromium::minichromium_base
       crashpad_util
   )
 

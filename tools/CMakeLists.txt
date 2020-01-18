@@ -11,7 +11,7 @@ target_include_directories(
 hunter_add_package(mini_chromium)
 find_package(mini_chromium CONFIG REQUIRED)
 
-target_link_libraries(crashpad_tool_support PUBLIC mini_chromium::base)
+target_link_libraries(crashpad_tool_support PUBLIC mini_chromium::minichromium_base)
 
 add_executable(crashpad_database_util crashpad_database_util.cc)
 target_link_libraries(

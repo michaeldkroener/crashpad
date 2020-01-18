@@ -237,7 +237,7 @@ add_library(crashpad_util ${sources})
 hunter_add_package(mini_chromium)
 find_package(mini_chromium CONFIG REQUIRED)
 
-target_link_libraries(crashpad_util PUBLIC mini_chromium::base crashpad_compat)
+target_link_libraries(crashpad_util PUBLIC mini_chromium::minichromium_base crashpad_compat)
 target_include_directories(
     crashpad_util PUBLIC "$<BUILD_INTERFACE:${CMAKE_CURRENT_LIST_DIR}/..>"
 )
@@ -383,7 +383,7 @@ if(CRASHPAD_BUILD_TESTS)
       crashpad_test
       GMock::main
       GTest::gtest
-      mini_chromium::base
+      mini_chromium::minichromium_base
   )
 
   set(dst_dir "$<TARGET_FILE_DIR:crashpad_util_test>/util/net/")
